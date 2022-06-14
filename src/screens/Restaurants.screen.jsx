@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StatusBar, SafeAreaView } from "react-native";
 import { Searchbar } from "react-native-paper";
-import RestaurantInfoCard from "../components/RestaurantInfoCard.component";
+import RestaurantInfoCard from "../components/restaurant-info-card";
 
 import styled from "styled-components";
 
