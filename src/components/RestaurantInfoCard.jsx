@@ -1,10 +1,10 @@
 import React from "react";
 import { SvgXml } from "react-native-svg";
 
-import { Text } from "../atoms/Text.component";
+import { Text } from "./core/Text";
 
-import star from "../../../assets/star";
-import open from "../../../assets/open";
+import star from "../../assets/star";
+import open from "../../assets/open";
 
 import {
   RestaurantCard,
@@ -14,7 +14,7 @@ import {
   Rating,
   OpenIcon,
   CategoryIcon,
-} from "./RestaurantInfoCard.styles";
+} from "./restaurant-info-card";
 
 export default function RestaurantInfoCard({ restaurant = {} }) {
   const {
