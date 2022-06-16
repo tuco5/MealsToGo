@@ -2,9 +2,9 @@ import React from "react";
 import { Searchbar } from "react-native-paper";
 
 import { SafeArea } from "../utils/SafeArea";
-import RestaurantInfoCard from "../components/RestaurantInfoCard";
+import RestaurantInfoCard from "../components/RestaurantInfoCard.component";
 
-import { SearchContainer, RestaurantList } from "./restaurant-list-screen";
+import { SearchContainer, RestaurantList } from "./RestaurantList.style";
 
 export default function RestaurantsScreen() {
   return (
