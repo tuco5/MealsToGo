@@ -2,7 +2,8 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components";
 
-import Navigation from "./src/components/core/Navigation.component";
+import RestaurantContextProvider from "./src/contexts/Restaurants.context";
+import Navigation from "./src/core/Navigation.component";
 
 import { useFonts, Oswald_400Regular } from "@expo-google-fonts/oswald";
 import { Lato_400Regular } from "@expo-google-fonts/lato";
@@ -16,7 +17,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navigation />
+        <RestaurantContextProvider>
+          <Navigation />
+        </RestaurantContextProvider>
       </ThemeProvider>
       <StatusBar style="auto" />
     </>

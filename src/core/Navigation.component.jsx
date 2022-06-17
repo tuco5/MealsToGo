@@ -4,8 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
-import { SafeArea } from "../../utils/SafeArea";
-import RestaurantsScreen from "../../screens/RestaurantList.screen";
+import { SafeArea } from "../utils/SafeArea";
+import RestaurantsScreen from "../screens/RestaurantList.screen";
 
 function SettingsScreen() {
   return (
