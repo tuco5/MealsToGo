@@ -1,7 +1,7 @@
 import React from "react";
 import { SvgXml } from "react-native-svg";
 
-import { Text } from "../core/Text.component";
+import { Text } from "./Text.component";
 
 import star from "../../assets/star";
 import open from "../../assets/open";
