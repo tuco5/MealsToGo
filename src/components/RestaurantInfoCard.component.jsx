@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { SvgXml } from "react-native-svg";
 
 import { Text } from "./Text.component";
@@ -27,10 +27,14 @@ export default function RestaurantInfoCard({ restaurant }) {
     isOpen = true,
     rating = 4,
     isClosedTemporarily = true,
+    placeId,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.ceil(rating)));
-  const randomPhotoIndex = Math.floor(Math.random() * photos.length);
+  const randomPhotoIndex = useMemo(
+    () => Math.floor(Math.random() * photos.length),
+    [photos]
+  );
 
   return (
     <RestaurantCard elevation={5}>
@@ -42,8 +46,13 @@ export default function RestaurantInfoCard({ restaurant }) {
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map((el, index) => (
-              <SvgXml xml={star} width={20} height={20} key={index} />
+            {ratingArray.map((_, index) => (
+              <SvgXml
+                xml={star}
+                width={20}
+                height={20}
+                key={`${index}-${placeId}`}
+              />
             ))}
           </Rating>
           <OpenIcon>

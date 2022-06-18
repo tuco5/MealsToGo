@@ -4,11 +4,10 @@ import { mocks } from "../mocks/restaurants";
 import { mockImages } from "../mocks/restaurants";
 
 export const restaurantsRequest = (location) => {
-  console.log("restaurant service =>", location);
   return new Promise((resolve, reject) => {
     const mock = mocks[location];
     if (!mock) {
-      reject("not found");
+      reject("Not Found");
     }
     resolve(mock);
   });

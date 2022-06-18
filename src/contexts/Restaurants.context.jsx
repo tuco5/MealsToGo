@@ -22,6 +22,7 @@ export default function RestaurantContextProvider({ children }) {
       restaurantsRequest(loc)
         .then(restaurantsTransform)
         .then((results) => {
+          setError(null);
           setRestaurants(results);
           setIsLoading(false);
         })
@@ -31,8 +32,6 @@ export default function RestaurantContextProvider({ children }) {
         });
     }, 2000);
   };
-
-  console.log("restaurant context =>", location);
 
   useMemo(() => fetchRestaurants(location), [location]);
 

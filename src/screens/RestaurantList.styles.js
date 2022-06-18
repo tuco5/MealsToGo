@@ -7,6 +7,13 @@ export const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: { padding: 16 },
 })``;
 
+export const ErrorContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30%;
+`;
+
 export const Loading = styled(ActivityIndicator).attrs({
   animation: true,
   color: Colors.blue300,
