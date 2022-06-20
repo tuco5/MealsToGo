@@ -1,7 +1,7 @@
 import { FlatList } from "react-native";
 import { Colors, ActivityIndicator } from "react-native-paper";
 
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 export const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: { padding: 16 },

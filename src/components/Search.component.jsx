@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Searchbar } from "react-native-paper";
 import { LocationsContext } from "../contexts/Locations.context";
 
@@ -6,7 +6,9 @@ import { SearchContainer } from "./Search.styles";
 
 export default function Search() {
   const { keyword, onSearch } = useContext(LocationsContext);
-  const [searchInput, setSearchInput] = useState(keyword);
+  const [searchInput, setSearchInput] = useState("");
+
+  useEffect(() => setSearchInput(keyword), [keyword]);
 
   return (
     <SearchContainer>
@@ -15,6 +17,7 @@ export default function Search() {
         value={searchInput}
         onChangeText={setSearchInput}
         onIconPress={() => onSearch(searchInput)}
+        onSubmitEditing={() => onSearch(searchInput)}
       />
     </SearchContainer>
   );

@@ -1,12 +1,15 @@
 import React from "react";
-import { SafeArea } from "../utils/SafeArea";
 
-import { Map } from "./Map.styles";
+import Search from "../components/Search.component";
+import { Map, SearchContainer } from "./Map.styles";
 
 export default function MapScreen() {
   return (
-    <SafeArea>
+    <>
+      <SearchContainer>
+        <Search />
+      </SearchContainer>
       <Map />
-    </SafeArea>
+    </>
   );
 }

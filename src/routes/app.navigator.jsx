@@ -2,19 +2,10 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { Text } from "react-native";
 
-import { SafeArea } from "../utils/SafeArea";
 import RestaurantsNavigator from "./restaurants.navigator";
 import MapScreen from "../screens/Map.screen";
-
-function SettingsScreen() {
-  return (
-    <SafeArea>
-      <Text>Settings!</Text>
-    </SafeArea>
-  );
-}
+import SettingsScreen from "../screens/Settings.screen";
 
 const TAB_ICON = {
   Restaurants: "md-restaurant",
