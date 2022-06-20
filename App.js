@@ -1,10 +1,9 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components";
 
 import RestaurantContextProvider from "./src/contexts/Restaurants.context";
 import LocationContextProvider from "./src/contexts/Locations.context";
-import Navigation from "./src/components/Navigation.component";
+import Navigation from "./src/routes";
 
 import { useFonts, Oswald_400Regular } from "@expo-google-fonts/oswald";
 import { Lato_400Regular } from "@expo-google-fonts/lato";
@@ -16,15 +15,12 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <LocationContextProvider>
-          <RestaurantContextProvider>
-            <Navigation />
-          </RestaurantContextProvider>
-        </LocationContextProvider>
-      </ThemeProvider>
-      <StatusBar style="auto" />
-    </>
+    <ThemeProvider theme={theme}>
+      <LocationContextProvider>
+        <RestaurantContextProvider>
+          <Navigation />
+        </RestaurantContextProvider>
+      </LocationContextProvider>
+    </ThemeProvider>
   );
 }

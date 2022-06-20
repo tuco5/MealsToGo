@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { SvgXml } from "react-native-svg";
 
-import { Text } from "./Text.component";
+import { Text } from "../utils/Text.component";
 
 import star from "../../assets/star";
 import open from "../../assets/open";

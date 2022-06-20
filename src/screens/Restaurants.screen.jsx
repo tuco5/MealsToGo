@@ -1,20 +1,16 @@
 import React, { useContext } from "react";
+import { TouchableOpacity } from "react-native";
 
 import { RestaurantsContext } from "../contexts/Restaurants.context";
 import { SafeArea } from "../utils/SafeArea";
 import RestaurantInfoCard from "../components/RestaurantInfoCard.component";
 import Search from "../components/Search.component";
 
-import {
-  RestaurantList,
-  Loading,
-  ErrorContainer,
-} from "./RestaurantList.styles";
-import { Text } from "../components/Text.component";
+import { RestaurantList, Loading, ErrorContainer } from "./Restaurants.styles";
+import { Text } from "../utils/Text.component";
 
-export default function RestaurantsScreen() {
+export default function RestaurantsScreen({ navigation }) {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-
   return (
     <SafeArea>
       <Search />
@@ -26,7 +22,15 @@ export default function RestaurantsScreen() {
       ) : (
         <RestaurantList
           data={restaurants}
-          renderItem={({ item }) => <RestaurantInfoCard restaurant={item} />}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Details", { restaurant: item })
+              }
+            >
+              <RestaurantInfoCard restaurant={item} />
+            </TouchableOpacity>
+          )}
           keyExtractor={(item) => item.placeId}
         />
       )}
