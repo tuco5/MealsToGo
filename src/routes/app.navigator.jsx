@@ -6,18 +6,12 @@ import { Text } from "react-native";
 
 import { SafeArea } from "../utils/SafeArea";
 import RestaurantsNavigator from "./restaurants.navigator";
+import MapScreen from "../screens/Map.screen";
 
 function SettingsScreen() {
   return (
     <SafeArea>
       <Text>Settings!</Text>
-    </SafeArea>
-  );
-}
-function MapScreen() {
-  return (
-    <SafeArea>
-      <Text>Map!</Text>
     </SafeArea>
   );
 }
