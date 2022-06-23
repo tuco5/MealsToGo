@@ -1,8 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-import RestaurantContextProvider from "./src/contexts/Restaurants.context";
-import LocationContextProvider from "./src/contexts/Locations.context";
+import RestaurantsContextProvider from "./src/contexts/Restaurants.context";
+import LocationContextProvider from "./src/contexts/Location.context";
 import Navigation from "./src/routes";
 
 import { useFonts, Oswald_400Regular } from "@expo-google-fonts/oswald";
@@ -17,9 +17,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <LocationContextProvider>
-        <RestaurantContextProvider>
+        <RestaurantsContextProvider>
           <Navigation />
-        </RestaurantContextProvider>
+        </RestaurantsContextProvider>
       </LocationContextProvider>
     </ThemeProvider>
   );

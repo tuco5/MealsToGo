@@ -4,12 +4,12 @@ import {
   restaurantsRequest,
   restaurantsTransform,
 } from "../services/restaurants.service";
-import { LocationsContext } from "./Locations.context";
+import { LocationContext } from "./Location.context";
 
 export const RestaurantsContext = createContext();
 
-export default function RestaurantContextProvider({ children }) {
-  const { location } = useContext(LocationsContext);
+export default function RestaurantsContextProvider({ children }) {
+  const { location } = useContext(LocationContext);
 
   const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

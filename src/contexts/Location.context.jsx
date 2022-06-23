@@ -5,11 +5,24 @@ import {
   locationTransform,
 } from "../services/locations.service";
 
-export const LocationsContext = createContext();
+export const LocationContext = createContext();
 
 export default function LocationContextProvider({ children }) {
   const [keyword, setKeyword] = useState("");
-  const [location, setLocation] = useState("37.7749295,-122.4194155");
+  const [location, setLocation] = useState({
+    lat: 51.219448,
+    lng: 4.402464,
+    viewport: {
+      northeast: {
+        lat: 51.2145994302915,
+        lng: 4.418074130291502,
+      },
+      southwest: {
+        lat: 51.2119014697085,
+        lng: 4.415376169708497,
+      },
+    },
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -19,7 +32,7 @@ export default function LocationContextProvider({ children }) {
       .then(locationTransform)
       .then((result) => {
         setIsLoading(false);
-        setLocation(`${result.lat},${result.lng}`);
+        setLocation(result);
         setError(null);
       })
       .catch((err) => {
@@ -35,7 +48,7 @@ export default function LocationContextProvider({ children }) {
   };
 
   return (
-    <LocationsContext.Provider
+    <LocationContext.Provider
       value={{
         isLoading,
         error,
@@ -45,6 +58,6 @@ export default function LocationContextProvider({ children }) {
       }}
     >
       {children}
-    </LocationsContext.Provider>
+    </LocationContext.Provider>
   );
 }
