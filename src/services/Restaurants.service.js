@@ -5,10 +5,14 @@ import { mockImages } from "../mocks/restaurants";
 
 export const restaurantsRequest = (location) => {
   return new Promise((resolve, reject) => {
-    const mock = mocks[location];
+    // If location not null but not found reject
+    const locLatLng = `${location.lat},${location.lng}`;
+    const mock = mocks[locLatLng];
     if (!mock) {
       reject("Not Found");
     }
+
+    // Resolve
     resolve(mock);
   });
 };
